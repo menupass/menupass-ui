@@ -1,0 +1,22 @@
+{
+  "name": "menupass-ui-example",
+  "displayName": "MenupassUi Example",
+  "expo": {
+    "name": "menupass-ui-example",
+    "slug": "menupass-ui-example",
+    "description": "Example app for menupass-ui",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
