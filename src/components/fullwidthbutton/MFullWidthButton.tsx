@@ -15,6 +15,8 @@ export const MFullWidthButton = (props: MFullWidthButtonTypes) => {
         {
           backgroundColor: props.disabled
             ? MFullWidthButtonColor.containerBgDisabled
+            : props.bgColor
+            ? props.bgColor
             : MFullWidthButtonColor.containerBg,
         },
       ]}
