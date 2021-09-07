@@ -3,4 +3,5 @@ export type MFullWidthButtonTypes = {
   onPress?: (param?: any) => void;
   disabled?: boolean;
   bgColor?: string;
+  labelColor?: string;
 };
