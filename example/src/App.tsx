@@ -8,8 +8,10 @@ import {
   MAvatar,
   MFloatButtonType,
 } from 'menupass-ui';
+import { useState } from 'react';
 
 export default function App() {
+  const [masked, setMasked] = useState('');
   return (
     <SafeAreaView style={styles.main}>
       <Text style={styles.text}>Menu Pass UI Components example</Text>
@@ -17,9 +19,16 @@ export default function App() {
         <View style={styles.container}>
           <MTextInput label={'E-mail'} placeholder={'Inset your e-mail'} />
           <MTextInput
-            label={'E-mail'}
+            label={'With error'}
             placeholder={'Inset your e-mail'}
             hasError
+          />
+          <MTextInput
+            value={masked}
+            label={'Masked'}
+            placeholder={'Inset your e-mail'}
+            mask="(00) 00000-0000"
+            onChangeText={setMasked}
           />
           <MFullWidthButton label={'Continue'} />
           <MFullWidthButton label={'Continue'} disabled />

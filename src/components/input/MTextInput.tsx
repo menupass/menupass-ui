@@ -3,6 +3,7 @@ import { Text, TextInput, View } from 'react-native';
 import type { MInputProps } from './MInputTypes';
 import { MInputStyle } from './MInputStyle';
 import { MInputColors } from './MInputColors';
+import IMask from 'imask';
 
 export const MTextInput = (props: MInputProps) => {
   const [color, setColor] = useState(MInputColors.containerBorder);
@@ -17,14 +18,18 @@ export const MTextInput = (props: MInputProps) => {
     }
   };
 
+  const maskCreator = IMask.createMask({ mask: props.mask || '' });
+
   const onChangeText = (t: string) => {
+    const maskedText = maskCreator.resolve(t);
+
     if (props.hasError) {
       setBorderStyle(t, true);
     } else {
       setBorderStyle(t, false);
     }
     if (props.onChangeText) {
-      return props.onChangeText(t);
+      return props.onChangeText(maskedText);
     }
   };
 
