@@ -5,18 +5,24 @@ import { MInputStyle } from './MInputStyle';
 import { MInputColors } from './MInputColors';
 
 export const MTextInput = (props: MInputProps) => {
-  const [filled, setFilled] = useState(false);
+  const [color, setColor] = useState(MInputColors.containerBorder);
 
-  const setBorderStyle = (t: string) => {
-    if (t.trim() !== '') {
-      setFilled(true);
+  const setBorderStyle = (t: string, hasError: boolean) => {
+    if (t.trim() !== '' && hasError) {
+      setColor(MInputColors.error);
+    } else if (t.trim() !== '' && !hasError) {
+      setColor(MInputColors.containerBorderFilled);
     } else {
-      setFilled(false);
+      setColor(MInputColors.containerBorder);
     }
   };
 
   const onChangeText = (t: string) => {
-    setBorderStyle(t);
+    if (props.hasError) {
+      setBorderStyle(t, true);
+    } else {
+      setBorderStyle(t, false);
+    }
     if (props.onChangeText) {
       return props.onChangeText(t);
     }
@@ -29,9 +35,7 @@ export const MTextInput = (props: MInputProps) => {
         style={[
           MInputStyle.container,
           {
-            borderColor: filled
-              ? MInputColors.containerBorderFilled
-              : MInputColors.containerBorder,
+            borderColor: color,
           },
         ]}
       >

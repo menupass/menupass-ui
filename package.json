@@ -75,8 +75,8 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-switch-pro": "^1.0.5",
-    "react-native-svg": "^12.1.1"
+    "react-native-svg": "^12.1.1",
+    "react-native-switch-pro": "^1.0.5"
   },
   "jest": {
     "preset": "react-native",
@@ -156,5 +156,6 @@
         }
       ]
     ]
-  }
+  },
+  "dependencies": {}
 }

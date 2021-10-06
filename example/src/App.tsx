@@ -16,6 +16,11 @@ export default function App() {
       <ScrollView contentContainerStyle={styles.scroll}>
         <View style={styles.container}>
           <MTextInput label={'E-mail'} placeholder={'Inset your e-mail'} />
+          <MTextInput
+            label={'E-mail'}
+            placeholder={'Inset your e-mail'}
+            hasError
+          />
           <MFullWidthButton label={'Continue'} />
           <MFullWidthButton label={'Continue'} disabled />
           <MAvatar username={'Vitor Monteiro'} status={'Ativo'} />

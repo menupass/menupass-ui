@@ -4,4 +4,5 @@ export const MInputColors = {
   label: '#000000',
   placeholderColor: '#A9A9AD',
   inputTextColor: '#000000',
+  error: '#FF0000',
 };
