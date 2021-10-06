@@ -29,7 +29,7 @@ export const MTextInput = (props: MInputProps) => {
       setBorderStyle(t, false);
     }
     if (props.onChangeText) {
-      return props.onChangeText(maskedText);
+      return props.onChangeText(props.mask ? maskedText : t);
     }
   };
 

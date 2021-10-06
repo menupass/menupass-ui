@@ -12,13 +12,22 @@ import { useState } from 'react';
 
 export default function App() {
   const [masked, setMasked] = useState('');
+  const [withError, setWithError] = useState('');
+  const [normal, setNormal] = useState('');
   return (
     <SafeAreaView style={styles.main}>
       <Text style={styles.text}>Menu Pass UI Components example</Text>
       <ScrollView contentContainerStyle={styles.scroll}>
         <View style={styles.container}>
-          <MTextInput label={'E-mail'} placeholder={'Inset your e-mail'} />
           <MTextInput
+            label={'E-mail'}
+            placeholder={'Inset your e-mail'}
+            value={normal}
+            onChangeText={setNormal}
+          />
+          <MTextInput
+            value={withError}
+            onChangeText={setWithError}
             label={'With error'}
             placeholder={'Inset your e-mail'}
             hasError
