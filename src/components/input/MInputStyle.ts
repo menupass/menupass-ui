@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { MInputColors } from './MInputColors';
-import { Fonts } from '../../fonts';
+import { Fonts, FontsDefinition } from '../../fonts';
 
 export const MInputStyle = StyleSheet.create({
   container: {
@@ -18,6 +18,7 @@ export const MInputStyle = StyleSheet.create({
     color: MInputColors.label,
     marginBottom: 5,
     fontWeight: '700',
+    fontFamily: FontsDefinition.regular,
   },
   input: {
     ...Fonts.p3,

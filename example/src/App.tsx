@@ -6,6 +6,7 @@ import {
   MFullWidthButton,
   MFloatButton,
   MAvatar,
+  MSelect,
   MFloatButtonType,
 } from 'menupass-ui';
 import { useState } from 'react';
@@ -14,6 +15,22 @@ export default function App() {
   const [masked, setMasked] = useState('');
   const [withError, setWithError] = useState('');
   const [normal, setNormal] = useState('');
+
+  const selectData = [
+    {
+      label: 'Test 1',
+      value: 'test1',
+    },
+    {
+      label: 'Test 2',
+      value: 'test2',
+    },
+    {
+      label: 'Test 3',
+      value: 'test3',
+    },
+  ];
+
   return (
     <SafeAreaView style={styles.main}>
       <Text style={styles.text}>Menu Pass UI Components example</Text>
@@ -36,12 +53,19 @@ export default function App() {
             value={masked}
             label={'Masked'}
             placeholder={'Inset your e-mail'}
-            mask="(00) 00000-0000"
+            mask={'(00) 00000-0000'}
             onChangeText={setMasked}
           />
           <MFullWidthButton label={'Continue'} />
           <MFullWidthButton label={'Continue'} disabled />
           <MAvatar username={'Vitor Monteiro'} status={'Ativo'} />
+          <MSelect
+            label={'Select'}
+            values={selectData}
+            selectedValue={'test1'}
+            onValueChange={(value: string, index: number) =>
+              console.log(value, index)}
+          />
         </View>
       </ScrollView>
       <MFloatButton type={MFloatButtonType.Plus} />
@@ -65,5 +89,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 25,
     justifyContent: 'space-evenly',
+    marginBottom: 100,
   },
 });
