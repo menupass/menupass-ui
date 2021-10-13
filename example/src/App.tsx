@@ -64,7 +64,18 @@ export default function App() {
             values={selectData}
             selectedValue={'test1'}
             onValueChange={(value: string, index: number) =>
-              console.log(value, index)}
+              console.log(value, index)
+            }
+          />
+          <MSelect
+            label={'Empty Select'}
+            placeholder="no values"
+            values={[]}
+            selectedValue={'test1'}
+            onValueChange={(value: string, index: number) =>
+              console.log(value, index)
+            }
+            enabled={false}
           />
         </View>
       </ScrollView>

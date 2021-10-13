@@ -3,6 +3,9 @@ import { MSelectColors } from './MSelectColors';
 import { FontsDefinition } from '../../fonts';
 
 export const styles = StyleSheet.create({
+  container: {
+    opacity: 0.5,
+  },
   picker: {
     height: 56,
     borderRadius: 10,

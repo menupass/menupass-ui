@@ -8,4 +8,6 @@ export type MSelectTypes = {
   values: MSelectItems[];
   selectedValue: string;
   onValueChange: (itemValue: string, index: number) => void;
+  placeholder?: string;
+  enabled?: boolean;
 };
