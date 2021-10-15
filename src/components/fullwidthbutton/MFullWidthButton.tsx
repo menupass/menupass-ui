@@ -12,12 +12,14 @@ export const MFullWidthButton = (props: MFullWidthButtonTypes) => {
       onPress={props.onPress}
       style={[
         MFullWidthButtonStyles.container,
+        // eslint-disable-next-line react-native/no-inline-styles
         {
           backgroundColor: props.disabled
             ? MFullWidthButtonColor.containerBgDisabled
             : props.bgColor
             ? props.bgColor
             : MFullWidthButtonColor.containerBg,
+          height: props.height ? props.height : 56,
         },
       ]}
     >

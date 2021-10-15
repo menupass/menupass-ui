@@ -4,4 +4,5 @@ export type MFullWidthButtonTypes = {
   disabled?: boolean;
   bgColor?: string;
   labelColor?: string;
+  height?: number;
 };
