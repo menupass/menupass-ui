@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { fonts } from '../../../example/src/consts/fonts';
+import { FontsDefinition } from '../../fonts';
 
 export const defaultLabelColor = '#000000';
 export const defaultCheckedColor = '#000000';
@@ -17,8 +17,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   label: {
-    fontFamily: fonts.Regular,
+    fontFamily: FontsDefinition.regular,
     color: defaultLabelColor,
+    fontSize: 16,
     fontWeight: '700',
   },
   radioChecked: {
