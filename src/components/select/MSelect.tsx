@@ -29,7 +29,7 @@ export const MSelect = (props: MSelectTypes) => {
         enabled={enabled}
       >
         {valuesList.map((item: MSelectItems) => (
-          <Picker.Item label={item.label} value={item.value} />
+          <Picker.Item label={item.label} value={item.value} key={item.value} />
         ))}
       </Picker>
     </View>
