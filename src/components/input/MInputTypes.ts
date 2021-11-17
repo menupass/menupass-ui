@@ -4,4 +4,5 @@ export type MInputProps = TextInputProps & {
   label: string;
   hasError?: boolean;
   mask?: string;
+  isPassword?: boolean;
 };

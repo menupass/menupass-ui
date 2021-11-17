@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import type { MInputProps } from './MInputTypes';
 import { MInputStyle } from './MInputStyle';
 import { MInputColors } from './MInputColors';
 import IMask from 'imask';
+import { Eye, EyeBlock } from '../icons';
 
 export const MTextInput = (props: MInputProps) => {
   const [color, setColor] = useState(MInputColors.containerBorder);
+  const [secureTextEntry, setSecureTextEntry] = useState(props.secureTextEntry);
 
   const setBorderStyle = (t: string, hasError: boolean) => {
     if (t.trim() !== '' && hasError) {
@@ -46,10 +48,21 @@ export const MTextInput = (props: MInputProps) => {
       >
         <TextInput
           {...props}
+          secureTextEntry={secureTextEntry}
           style={MInputStyle.input}
           placeholderTextColor={MInputColors.placeholderColor}
           onChangeText={onChangeText}
         />
+        {props.isPassword && secureTextEntry && (
+          <TouchableOpacity onPress={() => setSecureTextEntry(false)}>
+            <Eye />
+          </TouchableOpacity>
+        )}
+        {props.isPassword && !secureTextEntry && (
+          <TouchableOpacity onPress={() => setSecureTextEntry(true)}>
+            <EyeBlock />
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );
