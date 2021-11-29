@@ -22,6 +22,7 @@ export default function App() {
   const [withError, setWithError] = useState('');
   const [normal, setNormal] = useState('');
   const [password, setPassword] = useState('');
+  const [price, setPrice] = useState<number | null>(0);
 
   let [fontsLoaded] = useFonts({
     [fonts.Bold]: require('./assets/fonts/Roboto-Bold.ttf'),
@@ -52,6 +53,13 @@ export default function App() {
           <Text style={styles.text}>Menu Pass UI Components example</Text>
           <ScrollView contentContainerStyle={styles.scroll}>
             <View style={styles.container}>
+              <MTextInput
+                label={'Price'}
+                placeholder={'Insert your price'}
+                value={price}
+                onChangeValue={setPrice}
+                isCurrency
+              />
               <MTextInput
                 label={'Password'}
                 placeholder={'Insert your password'}

@@ -5,8 +5,10 @@ import { MInputStyle } from './MInputStyle';
 import { MInputColors } from './MInputColors';
 import IMask from 'imask';
 import { Eye, EyeBlock } from '../icons';
+import CurrencyInput from 'react-native-currency-input';
+import type { MCurrencyProps } from './MInputTypes';
 
-export const MTextInput = (props: MInputProps) => {
+export const MTextInput = (props: MInputProps | MCurrencyProps) => {
   const [color, setColor] = useState(MInputColors.containerBorder);
   const [secureTextEntry, setSecureTextEntry] = useState(props.secureTextEntry);
 
@@ -35,6 +37,10 @@ export const MTextInput = (props: MInputProps) => {
     }
   };
 
+  if (props.isCurrency && !props.onChangeValue) {
+    throw 'onChangeValue prop is required for currency input';
+  }
+
   return (
     <View>
       <Text style={MInputStyle.label}>{props.label}</Text>
@@ -46,22 +52,37 @@ export const MTextInput = (props: MInputProps) => {
           },
         ]}
       >
-        <TextInput
-          {...props}
-          secureTextEntry={secureTextEntry}
-          style={MInputStyle.input}
-          placeholderTextColor={MInputColors.placeholderColor}
-          onChangeText={onChangeText}
-        />
-        {props.isPassword && secureTextEntry && (
-          <TouchableOpacity onPress={() => setSecureTextEntry(false)}>
-            <Eye />
-          </TouchableOpacity>
-        )}
-        {props.isPassword && !secureTextEntry && (
-          <TouchableOpacity onPress={() => setSecureTextEntry(true)}>
-            <EyeBlock />
-          </TouchableOpacity>
+        {props.isCurrency ? (
+          <CurrencyInput
+            prefix={props.prefix}
+            delimiter={props.delimiter}
+            separator={props.separator}
+            precision={props.precision}
+            minValue={props.minValue}
+            value={props.value}
+            style={MInputStyle.input}
+            onChangeValue={props.onChangeValue}
+          />
+        ) : (
+          <>
+            <TextInput
+              {...props}
+              secureTextEntry={secureTextEntry}
+              style={MInputStyle.input}
+              placeholderTextColor={MInputColors.placeholderColor}
+              onChangeText={onChangeText}
+            />
+            {props.isPassword && secureTextEntry && (
+              <TouchableOpacity onPress={() => setSecureTextEntry(false)}>
+                <Eye />
+              </TouchableOpacity>
+            )}
+            {props.isPassword && !secureTextEntry && (
+              <TouchableOpacity onPress={() => setSecureTextEntry(true)}>
+                <EyeBlock />
+              </TouchableOpacity>
+            )}
+          </>
         )}
       </View>
     </View>
