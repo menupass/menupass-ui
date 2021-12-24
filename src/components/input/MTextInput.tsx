@@ -50,7 +50,7 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
           {
             borderColor: color,
             height: props.height ? props.height : 56,
-            borderRadius: props.borderRadios ? props.borderRadios : 10,
+            borderRadius: props.borderRadius ? props.borderRadius : 10,
           },
         ]}
       >

@@ -9,7 +9,7 @@ export type MInputProps = TextInputProps &
     isPassword?: boolean;
     isCurrency?: boolean;
     height?: number;
-    borderRadios?: number;
+    borderRadius?: number;
   };
 
 export type MCurrencyProps = CurrencyInputProps & {
