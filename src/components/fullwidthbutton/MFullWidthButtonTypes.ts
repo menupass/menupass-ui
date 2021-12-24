@@ -5,4 +5,5 @@ export type MFullWidthButtonTypes = {
   bgColor?: string;
   labelColor?: string;
   height?: number;
+  fontSize?: number;
 };

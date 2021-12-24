@@ -32,6 +32,7 @@ export const MFullWidthButton = (props: MFullWidthButtonTypes) => {
               : props.labelColor
               ? props.labelColor
               : MFullWidthButtonColor.label,
+            fontSize: props.fontSize ? props.fontSize : 16,
           },
         ]}
       >

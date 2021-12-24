@@ -49,6 +49,8 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
           MInputStyle.container,
           {
             borderColor: color,
+            height: props.height ? props.height : 56,
+            borderRadius: props.borderRadios ? props.borderRadios : 10,
           },
         ]}
       >
