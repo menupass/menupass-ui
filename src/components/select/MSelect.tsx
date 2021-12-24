@@ -5,8 +5,16 @@ import { Picker } from '@react-native-picker/picker';
 import { styles } from './MSelectStyles';
 
 export const MSelect = (props: MSelectTypes) => {
-  const { label, values, selectedValue, onValueChange, placeholder, enabled } =
-    props;
+  const {
+    label,
+    values,
+    selectedValue,
+    onValueChange,
+    placeholder,
+    enabled,
+    height,
+    borderRadius,
+  } = props;
 
   const valuesList = values;
 
@@ -22,7 +30,13 @@ export const MSelect = (props: MSelectTypes) => {
       <Text style={styles.label}>{label}</Text>
       <Picker
         {...props}
-        style={styles.picker}
+        style={[
+          styles.picker,
+          {
+            height: height ? height : 56,
+            borderRadius: borderRadius ? borderRadius : 10,
+          },
+        ]}
         selectedValue={selectedValue}
         onValueChange={onValueChange}
         itemStyle={styles.itemFont}

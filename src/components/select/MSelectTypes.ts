@@ -10,4 +10,6 @@ export type MSelectTypes = {
   onValueChange: (itemValue: string, index: number) => void;
   placeholder?: string;
   enabled?: boolean;
+  height?: number;
+  borderRadius?: number;
 };
