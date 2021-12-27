@@ -62,7 +62,12 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
             precision={props.precision}
             minValue={props.minValue}
             value={props.value}
-            style={MInputStyle.input}
+            style={[
+              MInputStyle.input,
+              {
+                height: props.height ? props.height - 11 : 45,
+              },
+            ]}
             onChangeValue={props.onChangeValue}
           />
         ) : (
@@ -70,7 +75,12 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
             <TextInput
               {...props}
               secureTextEntry={secureTextEntry}
-              style={MInputStyle.input}
+              style={[
+                MInputStyle.input,
+                {
+                  height: props.height ? props.height - 11 : 45,
+                },
+              ]}
               placeholderTextColor={MInputColors.placeholderColor}
               onChangeText={onChangeText}
             />
