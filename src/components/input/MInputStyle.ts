@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { MInputColors } from './MInputColors';
 import { Fonts, FontsDefinition } from '../../fonts';
 
@@ -23,7 +23,7 @@ export const MInputStyle = StyleSheet.create({
   input: {
     ...Fonts.p3,
     color: MInputColors.inputTextColor,
-    width: '100%',
+    width: Platform.OS === 'web' ? '100%' : '97%',
     height: 45,
   },
 });

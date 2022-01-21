@@ -13,7 +13,7 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
   const [secureTextEntry, setSecureTextEntry] = useState(props.secureTextEntry);
 
   const setBorderStyle = (t: string, hasError: boolean) => {
-    if (t.trim() !== '' && hasError) {
+    if (hasError) {
       setColor(MInputColors.error);
     } else if (t.trim() !== '' && !hasError) {
       setColor(MInputColors.containerBorderFilled);
@@ -83,6 +83,12 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
               ]}
               placeholderTextColor={MInputColors.placeholderColor}
               onChangeText={onChangeText}
+              onBlur={() => {
+                setBorderStyle('', props.hasError);
+                if (props.onBlur) {
+                  return props.onBlur;
+                }
+              }}
             />
             {props.isPassword && secureTextEntry && (
               <TouchableOpacity onPress={() => setSecureTextEntry(false)}>
