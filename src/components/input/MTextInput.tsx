@@ -41,6 +41,13 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
     throw 'onChangeValue prop is required for currency input';
   }
 
+  const handleBlur = (e: any) => {
+    if (props.onBlur) {
+      props.onBlur(e);
+      setBorderStyle('', props.hasError);
+    }
+  };
+
   return (
     <View>
       <Text style={MInputStyle.label}>{props.label}</Text>
@@ -83,12 +90,7 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
               ]}
               placeholderTextColor={MInputColors.placeholderColor}
               onChangeText={onChangeText}
-              onBlur={() => {
-                setBorderStyle('', props.hasError);
-                if (props.onBlur) {
-                  return props.onBlur;
-                }
-              }}
+              onBlur={handleBlur}
             />
             {props.isPassword && secureTextEntry && (
               <TouchableOpacity onPress={() => setSecureTextEntry(false)}>
