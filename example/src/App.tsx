@@ -123,6 +123,7 @@ export default function App() {
                 value={'radio1'}
                 checkedColor={'#FF0000'}
                 notCheckedColor={'#FF0000'}
+                // eslint-disable-next-line react-native/no-inline-styles
                 style={{ marginBottom: 10 }}
               />
             </View>

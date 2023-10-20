@@ -18,7 +18,7 @@ export const MSelect = (props: MSelectTypes) => {
 
   const valuesList = values;
 
-  if (valuesList.length === 0) {
+  if (valuesList?.length === 0) {
     valuesList.push({
       label: placeholder || '',
       value: '',
@@ -32,6 +32,7 @@ export const MSelect = (props: MSelectTypes) => {
         {...props}
         style={[
           styles.picker,
+          // eslint-disable-next-line react-native/no-inline-styles
           {
             height: height ? height : 56,
             borderRadius: borderRadius ? borderRadius : 10,
@@ -42,7 +43,7 @@ export const MSelect = (props: MSelectTypes) => {
         itemStyle={styles.itemFont}
         enabled={enabled}
       >
-        {valuesList.map((item: MSelectItems) => (
+        {valuesList?.map((item: MSelectItems) => (
           <Picker.Item label={item.label} value={item.value} key={item.value} />
         ))}
       </Picker>

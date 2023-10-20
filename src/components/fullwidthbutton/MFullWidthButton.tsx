@@ -26,6 +26,7 @@ export const MFullWidthButton = (props: MFullWidthButtonTypes) => {
       <Text
         style={[
           MFullWidthButtonStyles.text,
+          // eslint-disable-next-line react-native/no-inline-styles
           {
             color: props.disabled
               ? MFullWidthButtonColor.labelDisabled

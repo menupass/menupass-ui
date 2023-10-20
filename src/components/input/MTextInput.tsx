@@ -54,6 +54,7 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
       <View
         style={[
           MInputStyle.container,
+          // eslint-disable-next-line react-native/no-inline-styles
           {
             borderColor: color,
             height: props.height ? props.height : 56,
@@ -71,6 +72,7 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
             value={props.value}
             style={[
               MInputStyle.input,
+              // eslint-disable-next-line react-native/no-inline-styles
               {
                 height: props.height ? props.height - 11 : 45,
               },
@@ -84,6 +86,7 @@ export const MTextInput = (props: MInputProps | MCurrencyProps) => {
               secureTextEntry={secureTextEntry}
               style={[
                 MInputStyle.input,
+                // eslint-disable-next-line react-native/no-inline-styles
                 {
                   height: props.height ? props.height - 11 : 45,
                 },
