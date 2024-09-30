@@ -17,10 +17,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   label: {
-    fontFamily: FontsDefinition.regular,
+    fontFamily: FontsDefinition.bold,
     color: defaultLabelColor,
     fontSize: 16,
-    fontWeight: '700',
   },
   radioChecked: {
     width: 20,

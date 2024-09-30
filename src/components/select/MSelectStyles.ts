@@ -19,9 +19,8 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: MSelectColors.label,
     marginBottom: 5,
-    fontWeight: '700',
     width: '100%',
-    fontFamily: FontsDefinition.regular,
+    fontFamily: FontsDefinition.bold,
   },
   itemFont: {
     fontFamily: FontsDefinition.regular,

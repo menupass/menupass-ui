@@ -21,4 +21,9 @@ export const Fonts = {
     fontSize: 12,
     lineHeight: 16,
   },
+  p2Bold: {
+    fontFamily: FontsDefinition.bold,
+    fontSize: 16,
+    lineHeight: 20,
+  },
 };
