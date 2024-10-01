@@ -17,8 +17,7 @@ export const MInputStyle = StyleSheet.create({
     fontSize: 14,
     color: MInputColors.label,
     marginBottom: 5,
-    fontWeight: '700',
-    fontFamily: FontsDefinition.regular,
+    fontFamily: FontsDefinition.bold,
   },
   input: {
     ...Fonts.p3,

@@ -12,8 +12,7 @@ export const MFullWidthButtonStyles = StyleSheet.create({
     borderRadius: 10,
   },
   text: {
-    ...Fonts.p2,
+    ...Fonts.p2Bold,
     color: MFullWidthButtonColor.label,
-    fontWeight: '700',
   },
 });
